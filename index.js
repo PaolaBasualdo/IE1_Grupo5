@@ -1,8 +1,15 @@
 // index.js (en la raíz del proyecto)  
      
-   import express from 'express';  
-     
+   import express from 'express';    
    import sequelize from './src/db/connection.js'; // Importa la instancia (nota el .js)  
+
+    // IMPORTAR LOS MODELOS para que Sequelize los registre
+  import Departamento from "./src/models/Departamento.js";
+  import Instructor from './src/models/Instructor.js';
+
+    // IMPORTAR LAS RUTAS
+    import departamentoRoutes from './src/routes/departamento.routes.js';
+    import instructorRoutes from './src/routes/instructor.routes.js';
      
    const app = express();  
      
@@ -11,6 +18,10 @@
    // Middleware básico para parsear JSON  
      
    app.use(express.json());  
+// usar las rutas
+  app.use('/api/departamentos', departamentoRoutes);
+  app.use('/api/instructores', instructorRoutes);
+
      
    // Ruta de prueba  
      
