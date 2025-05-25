@@ -1,25 +1,26 @@
-import { DataTypes } from 'sequelize';
+import { Router } from 'express';
+import { Carrera } from '../models/index.js';
 
-const Carrera = (sequelize) => {
-    return sequelize.define('Carrera', {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        nombre: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        departamento_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
-    }, {
-        tableName: 'CARRERAS',
-        timestamps: true
+const router = Router();
+
+  // obtener todas las carreras
+
+router.get('/', async (req, res) => {
+  try {
+    const carreras = await Carrera.findAll(); 
+    res.status(200).json(carreras);           
+  } catch (error) {
+    console.error("Error al obtener carreras:", error); 
+    res.status(500).json({
+      message: 'Error del servidor',
+      error: error.message
     });
-};
+  }
+});
 
-export default Carrera;
+     
+//rutas
+
+router.get('/', getAllCarreras);
+
+export default router;
