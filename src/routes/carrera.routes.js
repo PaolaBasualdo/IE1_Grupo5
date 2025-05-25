@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Carrera } from '../models/index.js'; // importamos modelo carrera
+import { Carrera } from '../models/Carrera.js'; // importamos modelo 
 
 const router = Router(); 
 

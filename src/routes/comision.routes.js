@@ -1,7 +1,7 @@
 // src/routes/comision.routes.js
 
 import { Router } from 'express';
-import { Comision } from '../models/index.js'; // importamos modelo comision
+import { Comision } from '../models/Comision.js'; // importamos modelo 
 
 const router = Router(); 
 
