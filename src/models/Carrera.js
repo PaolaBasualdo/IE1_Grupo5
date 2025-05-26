@@ -17,7 +17,7 @@ const Carrera = (sequelize) => {
             allowNull: false
         }
     }, {
-        tableName: 'CARRERAS',
+        tableName: 'carreras',
         timestamps: true
     });
 };

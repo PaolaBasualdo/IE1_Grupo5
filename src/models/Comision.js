@@ -51,7 +51,7 @@ const Comision = (sequelize) => {
             }
         }
     }, {
-        tableName: 'COMISIONES', 
+        tableName: 'comisiones', 
         timestamps: true 
     });
 };
