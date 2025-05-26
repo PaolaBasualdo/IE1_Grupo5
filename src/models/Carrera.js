@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection.js';
 
-const Carrera = (sequelize) => {
-    return sequelize.define('Carrera', {
+const Carrera = sequelize.define ( 'Carrera', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -13,7 +12,7 @@ const Carrera = (sequelize) => {
             allowNull: false,
             unique: true
         },
-        departamento_id: {
+        idDepartamento: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
@@ -21,6 +20,6 @@ const Carrera = (sequelize) => {
         tableName: 'carreras',
         timestamps: true
     });
-};
+
 
 export default Carrera;
