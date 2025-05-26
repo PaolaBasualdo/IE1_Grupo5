@@ -1,4 +1,5 @@
 import { DataTypes } from 'sequelize';
+import sequelize from '../db/connection.js';
 
 const Carrera = (sequelize) => {
     return sequelize.define('Carrera', {

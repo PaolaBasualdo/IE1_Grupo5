@@ -1,4 +1,5 @@
 import { DataTypes } from 'sequelize';
+import sequelize from '../db/connection.js';
 
 const Comision = (sequelize) => {
     return sequelize.define('Comision', {
@@ -23,8 +24,7 @@ const Comision = (sequelize) => {
                 min: 1 // cupo minimo
             }
         },
-
-        
+ 
         //fk
         ID_CURSO: { 
             type: DataTypes.INTEGER,
